@@ -4,13 +4,10 @@ import random
 app = Flask(__name__)
 
 CORS(app)
-choices = [
-    "r",
-    "p",
-    "s",
-]
 
-def choose_winner(user_choice):
+def choose_winner(user_choice: str) -> dict:
+    choices = ["r", "p", "s"]
+
     comp_choice = random.choice(choices)
     result = "tie"
     win_map = {"r": "s", "p": "r", "s": "p"}
@@ -35,3 +32,6 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
