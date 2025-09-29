@@ -30,7 +30,7 @@ def choose_winner(user_choice):
 @app.route('/', methods=['POST'])
 def index():
     user_choice = request.json.get('choice').lower()
-    return jsonify(choose_winner(user_choice))
+    return jsonify(choose_winner(user_choice)), 200
 
 
 if __name__ == '__main__':
