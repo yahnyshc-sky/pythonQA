@@ -12,14 +12,20 @@ choices = [
 
 def choose_winner(user_choice):
     comp_choice = random.choice(choices)
-    if comp_choice == user_choice:
-        return {'comp_choice': comp_choice, 'user_choice':user_choice, 'result': "tie"}
-    elif comp_choice == "r" and user_choice == "s" or \
-    comp_choice == "p" and user_choice == "r" or \
-    comp_choice == "s" and user_choice == "p":
-        return {'comp_choice': comp_choice, 'user_choice': user_choice, 'result': "comp"}
-    else:
-        return {'comp_choice': comp_choice, 'user_choice': user_choice, 'result': "user"}
+    result = "tie"
+    win_map = {"r": "s", "p": "r", "s": "p"}
+
+    if comp_choice != user_choice:
+        if win_map[comp_choice] == user_choice:
+            result = "comp"
+        else:
+            result = "user"
+
+    return {
+        'comp_choice': comp_choice,
+        'user_choice': user_choice,
+        'result': result
+    }
 
 @app.route('/', methods=['POST'])
 def index():
