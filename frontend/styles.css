@@ -1,0 +1,58 @@
+@font-face {
+  font-family: myFont; /* set name */
+  src: url(sansation_light.woff); /* url of the font */
+}
+
+body {
+    font-family: myFont;
+    margin: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+button img {
+    width: 250px;
+    height: 250px;
+}
+
+.question-mark {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 64px;
+    text-align: center;
+
+}
+
+button:hover, button:focus {
+    outline: 2px solid #000;
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
