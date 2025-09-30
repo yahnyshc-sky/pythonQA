@@ -13,6 +13,8 @@ try:
         #In catch exceptions, raises another exception
         raise Exception("File does not exist #2 " + error.filename)
     except Exception as error:
-        raise Exception(error)
+        raise Exception("Error in first try block" + str(error))
+    else:
+        print("File exists")
 except Exception as error:
     print("Second try block: " + str(error))
